@@ -4,9 +4,10 @@ import { SchoolGrid } from '../../components/Home/SchoolGrid';
 
 
 export default function Dashboard() {
+  
     return (
         <>
-        <Header/>
+        <Header urlRedirect='/'/>
         <Text  mt="4rem" fontSize="3rem" color="white" fontWeight="bold" align="center">THE FUTURE OF EDUCATION.</Text>
         <Flex justifyContent="center" textAlign="center">
         <HStack mt="4rem" spacing="10rem">

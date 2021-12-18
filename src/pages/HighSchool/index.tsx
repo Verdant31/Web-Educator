@@ -1,12 +1,12 @@
 import { Header } from '../../components/DashboardAccess/Header';
 import { Box, Flex, Stack, HStack, Image, Text } from '@chakra-ui/react';
-import { Contents } from '../../components/HighSchool/Years';
+import { HighSchoolContent } from '../../components/HighSchool/HighSchoolContent';
 
 export default function HighSchool() {
     return(
         <>
-            <Header />
-            <Contents />
+            <Header urlRedirect='/DashboardAccess'/>
+            <HighSchoolContent />
         </>
     )
 }
