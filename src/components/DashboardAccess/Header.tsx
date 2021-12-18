@@ -13,8 +13,6 @@ interface HeaderProps {
 
 export function Header({urlRedirect}: HeaderProps) {
     const { user } = useAuth();
-    console.log(user?.photoURL)
-
     return (
         <Flex w="100%" h="8rem" mt="0" justifyContent="center" background="#950740">
             <Flex w="80%" align="center"  justifyContent="center" mx="auto" >

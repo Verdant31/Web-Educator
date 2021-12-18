@@ -1,5 +1,5 @@
 import { Box, Flex, Stack, HStack, Image, Text, Button } from '@chakra-ui/react';
-import { Content } from './Content';
+import { Content } from './Contents';
 
 
 export function HighSchoolContent() {
@@ -16,18 +16,8 @@ export function HighSchoolContent() {
                     </Flex>
                 </Flex>
                 <Flex  w="90vw">
-                    <Content year="FIRST" />
+                    <Content year="first" />
                 </Flex>
-                <Flex w="90vw">
-                    <Content year="SECOND" />
-                </Flex>
-                <Flex w="90vw">
-                    <Content year="THIRD" />
-                </Flex>
-                <Flex w="90vw">
-                    <Content year="FOURTH" />
-                </Flex>
-             
             </Stack>
         </Box>
     )

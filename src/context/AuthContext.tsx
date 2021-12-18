@@ -1,4 +1,4 @@
-import { createContext, useState, ReactNode} from 'react';
+import { createContext, useState, ReactNode, useEffect} from 'react';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { UserInfo } from '@firebase/auth/dist/auth-public';
 import Router from 'next/router';
@@ -21,6 +21,19 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     const provider = new GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     const auth = getAuth(app);
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+          if (user) {
+            setUser(user)
+          } else {
+            Router.push('/')
+          }
+        })
+        return () => {
+          unsubscribe();
+        }
+      }, [])
 
     async function signInWithGoogle() {
         signInWithPopup(auth, provider).then((result) => {

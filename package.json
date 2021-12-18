@@ -12,6 +12,7 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@prismicio/client": "^5.1.0",
+    "@types/prismic-dom": "^2.1.1",
     "firebase": "^9.6.1",
     "firebase-tools": "^9.23.3",
     "framer-motion": "^4",
