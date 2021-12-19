@@ -27,7 +27,6 @@ interface ContentProps {
 }
 
 export default function Content({ content }: ContentProps) {
-  console.log(content.text)
   return (
     <>
       <Header urlRedirect="/HighSchool" />
