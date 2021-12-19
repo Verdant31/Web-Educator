@@ -29,7 +29,7 @@ export function Header({urlRedirect}: HeaderProps) {
                 <Text w="40%" align="right" fontWeight="bold" color="white" fontSize="2.5rem" >WEB EDUCATOR</Text>
             </Flex>    
             <Flex align="center" w="50%" justifyContent="center" mx="auto"  >
-                {(!user ) 
+                {(!user) 
                     ? <ReactLoading type='balls' color='white' height='100%' width={'16%'} />
                     : 
                     <>
@@ -38,7 +38,10 @@ export function Header({urlRedirect}: HeaderProps) {
                             <Text mr="2rem" fontWeight="bold" color="white" fontSize="1.5rem" >{user?.email}</Text>
                         </Box>
                         <Box h="3rem" w="2px" background="white" my="auto" />
-                        <Avatar borderRadius="45px" h="4.7rem"  pl="2rem" src={user.photoURL}/>
+                        {(user.photoURL!== null)
+                            ? <Avatar borderRadius="45px" h="4.7rem"  pl="2rem" src={user.photoURL}/>
+                            : <h1>asdkopadsopk</h1>
+                        }
 
                     </>
                 }
