@@ -1,3 +1,4 @@
+//Chakra-ui
 import { Box, Flex, HStack, Image, Text } from '@chakra-ui/react';
 
 export function Resume() {

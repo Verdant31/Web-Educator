@@ -1,4 +1,7 @@
+//Chakra-ui
 import { Box, Flex, Text } from '@chakra-ui/react';
+
+//Components
 import { SchoolGrid } from './SchoolGrid';
 
 

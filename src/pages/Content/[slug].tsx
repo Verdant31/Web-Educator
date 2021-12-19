@@ -1,11 +1,20 @@
+//Chakra-ui
 import { Flex, Stack, Text } from '@chakra-ui/react';
+
+//Next
 import {  GetStaticProps } from 'next';
+
+//Prismic
 import { RichText } from 'prismic-dom'
-import { Header } from '../../components/DashboardAccess/Header';
 import { getPrismicClient } from '../../services/prismic'
+
+//Components
+import { Header } from '../../components/DashboardAccess/Header';
+
+//React-icons
 import {FaArrowLeft, FaArrowRight} from 'react-icons/fa';
 
-
+//Styles
 import styles from './content.module.scss';
 
 

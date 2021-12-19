@@ -1,9 +1,16 @@
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
-import { Avatar } from '@chakra-ui/react'
+//Chakra-ui
+import { Box, Button, Flex, Text, Avatar} from '@chakra-ui/react';
+
+//Router
 import  Router from 'next/router';
+
+//React-icons
 import {FaArrowLeft} from 'react-icons/fa';
+
+//Hooks
 import { useAuth } from '../../hooks/useAuth';
 
+//React loading
 import ReactLoading from 'react-loading';
 
 
@@ -16,8 +23,7 @@ export function Header({urlRedirect}: HeaderProps) {
     return (
         <Flex w="100%" h="8rem" mt="0" justifyContent="center" background="#950740">
             <Flex w="80%" align="center"  justifyContent="center" mx="auto" >
-                <Button  onClick={() => Router.push(`${urlRedirect}`)} border="none" w="8rem" ml="4rem" borderRadius="10px" h="3rem" rightIcon={<FaArrowLeft />} color="#c3073F" >
-                        <Text fontSize="1.5rem" color="#c3073F" fontWeight="bold">BACK</Text>
+                <Button background="none" onClick={() => Router.push(`${urlRedirect}`)} border="none" rightIcon={<FaArrowLeft color="white" size={40} />} >
                 </Button>
                 <Text w="50%" align="right" textAlign="center" fontWeight="bold"  color="white" fontSize="2rem" >Our motto is help people</Text>
                 <Text w="40%" align="right" fontWeight="bold" color="white" fontSize="2.5rem" >WEB EDUCATOR</Text>

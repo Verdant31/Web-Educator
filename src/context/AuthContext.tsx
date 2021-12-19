@@ -1,8 +1,13 @@
+//React
 import { createContext, useState, ReactNode, useEffect} from 'react';
+
+//Firebase
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { UserInfo } from '@firebase/auth/dist/auth-public';
-import Router from 'next/router';
 import { app} from '../services/firebase';
+
+//Router
+import Router from 'next/router';
 
 type AuthContextType = {
     user: UserInfo | undefined;
@@ -33,6 +38,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
         return () => {
           unsubscribe();
         }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
 
     async function signInWithGoogle() {

@@ -1,4 +1,7 @@
+//Chakra-ui
 import { Box } from '@chakra-ui/react';
+
+//Components
 import { AccessPlatform } from '../components/Home/AccessPlatform';
 import { PlatformView } from '../components/Home/PlatformView';
 import { Resume } from '../components/Home/Resume';

@@ -1,5 +1,10 @@
+//Chakra-ui
 import { Box, Text, Button, Stack } from '@chakra-ui/react';
+
+//Router
 import Router from 'next/router';
+
+//Hooks
 import { useAuth } from '../../hooks/useAuth';
 
 export function AccessPlatform() {

@@ -1,4 +1,7 @@
+//Chakra-ui
 import { Box, Flex, Image, Text, Button } from '@chakra-ui/react';
+
+//Router
 import Router from 'next/router';
 
 interface SchoolGridProps {
