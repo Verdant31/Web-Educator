@@ -1,23 +1,45 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { Flex, Stack, Text } from '@chakra-ui/react';
+import {  GetStaticProps } from 'next';
 import { RichText } from 'prismic-dom'
 import { Header } from '../../components/DashboardAccess/Header';
 import { getPrismicClient } from '../../services/prismic'
+import {FaArrowLeft, FaArrowRight} from 'react-icons/fa';
+
+
+import styles from './content.module.scss';
+
 
 interface ContentProps {
   content: {
     title: string;
+    chapter: string;
     text: string;
   }
 }
 
 export default function Content({ content }: ContentProps) {
+  console.log(content.text)
   return (
     <>
       <Header urlRedirect="/HighSchool" />
-      <h1>{content.title}</h1>
-      <div
-            dangerouslySetInnerHTML={{ __html: content.text }}
+      <Text mt="4rem" mb="3rem" fontSize="3rem" color="#c3073f"fontWeight="bold" mx="auto" align="center">{content.title.toUpperCase()}</Text>
+      <Text mt="4rem" mb="3rem" fontSize="3rem" color="white"fontWeight="bold" mx="auto" align="center">{content.chapter}</Text>
+      
+      <div  
+        dangerouslySetInnerHTML={{ __html: content.text}}
+        className={styles.content}
       />
+      <Flex width="50rem" mx="auto" justifyContent="space-between" mb="10rem">
+        <Stack direction="row" alignItems="center" spacing="2rem">
+          <FaArrowLeft size={40} color="#950740" />
+          <Text fontWeight="bold" color="#950740" fontSize="2rem">PREVIOUS PAGE</Text>
+        </Stack>
+        <Stack direction="row" alignItems="center" spacing="2rem">
+          <Text fontWeight="bold" color="#950740" fontSize="2rem">NEXT PAGE</Text>
+          <FaArrowRight size={40} color="#950740" />
+        </Stack>
+
+      </Flex>
     </>
   )
 }
@@ -36,9 +58,9 @@ export const getStaticProps: GetStaticProps = async (params) => {
   const response = await prismic.getByUID('yearcontents', String(slug.params?.slug), {})
   const content = {
     title: RichText.asText(response.data.title),
+    chapter: RichText.asText(response.data.chapter),
     text: RichText.asHtml(response.data.content1),
   }
-
   return {
     props: {
       content
